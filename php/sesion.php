@@ -17,7 +17,7 @@ if ( $_POST ) {
 			if ( $id == $fila[ 'idadministrador' ] ) {
 				if ( $contra == $fila[ 'nombreAdministrador' ] ) {
 					$_SESSION[ "idAdmin" ] = $_POST[ 'usuario' ];
-					echo "ok1";
+					echo 1;
 					exit();
 				} else {
 
@@ -33,7 +33,7 @@ if ( $_POST ) {
 			if ( $id == $fila[ 'iddocente' ] ) {
 				if ( $contra == $fila[ 'contraDocente' ] ) {
 					$_SESSION[ "idAdmin" ] = $_POST[ 'usuario' ];
-					echo "ok2";
+					echo 2;
 					exit();
 				} else {
 
@@ -51,7 +51,7 @@ if ( $_POST ) {
 				if ( $contra == $fila[ 'contrasena' ] ) {
 					$_SESSION[ "idAdmin" ] = $_POST[ 'usuario' ];
 					$_SESSION[ "grado" ] = $fila[ "grado" ];
-					echo "ok3";
+					echo 3;
 					exit();
 				} else {
 

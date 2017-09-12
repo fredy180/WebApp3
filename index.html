@@ -101,12 +101,12 @@
 					success:function(resp){
 						
 						
-						if($.trim(resp)=="ok1"){
+						if(resp==1){
 							//alert("mi pene ");
 							//$(location).attr('href','php/admin/registroDocente.html');
 							//$(location).attr('href','php/admin/registroDocente.html');
 							window.location.href = "php/admin/registroDocente.html";
-                             //  window.location = "php/admin/registroDocente.html";
+                            //window.location = "php/admin/registroDocente.html";
 							
 						}else alert("Error en los datos.");
 					}
