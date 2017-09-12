@@ -60,7 +60,7 @@
 					</div>
 					<div class="">
 								<label>TIPO DE USUARIO</label>
-								<select class="browser-default" name="tipo" required>
+								<select class="browser-default" id="tipo" name="tipo" required>
 									<option value="Admin">ADMINISTRADOR</option>
 									<option value="Docen">DOCENTE</option>
 									<option value="Estu">ESTUDIANTE</option>
@@ -91,7 +91,7 @@
 				return false;
 
 			}else{
-
+				
 				var str = $( "#datoSesion" ).serialize();
 					$.ajax( {
 					url: "php/sesion.php",
@@ -101,7 +101,7 @@
 					success:function(resp){
 						
 						
-						if(resp==1){
+						if($("#tipo").val()=="Admin"){
 							//alert("mi pene ");
 							//$(location).attr('href','php/admin/registroDocente.html');
 							//$(location).attr('href','php/admin/registroDocente.html');
