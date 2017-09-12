@@ -147,26 +147,27 @@
         <script>
 		function Registro() {
 			
-			var str = $( "#datos" ).serializeArray();
+				var str = $( "#datos" ).serializeArray();
+			console.log(str);
 				$.ajax({
 					type       : "POST",
 					url        : "insertarDocente.php",
 					
-					data       : {str},
+					data       : str,
 					dataType   : 'json',
 					success    : function(response) {
 						//console.error(JSON.stringify(response));
-						alert('Rergistro !');
+						alert("Rergistro ! ");
 					},
-					error      : function() {
-						//console.error("error");
-						alert('Not Registro!');                  
+					error      : function(a) {
+						
+						alert(a["responseText"]);                  
 					}
     			});     
 		
 			
 
-			return false;
+			
 		}
 		
 	</script>
