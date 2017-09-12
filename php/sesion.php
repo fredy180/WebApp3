@@ -24,10 +24,7 @@ if ( $_POST ) {
 					echo "Datos incorrecto";
 					exit();
 				}
-
-
 			}
-
 		}
 	} else if ( $tipo == "Docen" ) {
 		$sql2 = $mysqli->query( "SELECT * FROM `docente` WHERE `iddocente`='$id'" );
@@ -36,15 +33,13 @@ if ( $_POST ) {
 			if ( $id == $fila[ 'iddocente' ] ) {
 				if ( $contra == $fila[ 'contraDocente' ] ) {
 					$_SESSION[ "idAdmin" ] = $_POST[ 'usuario' ];
-					echo "ok2";
+					echo json_encode("ok1");
 					exit();
 				} else {
 
-					echo "Datos incorrecto";
+					echo "Datos incorrectos";
 					exit();
 				}
-
-
 			}
 
 		}
@@ -63,7 +58,6 @@ if ( $_POST ) {
 					echo "Datos incorrecto";
 					exit();
 				}
-
 
 			}
 
