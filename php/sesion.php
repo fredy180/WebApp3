@@ -18,9 +18,11 @@ $_SESSION[ "idAdmin" ]=0;
 							if ( $contra == $fila[ 'nombreAdministrador' ] ) {
 								$_SESSION["idAdmin"] =$_POST[ 'usuario' ];
 								echo "ok1";
+								exit();
 							} else {
 
 								echo "Datos incorrecto";
+								exit();
 							}
 							
 
@@ -36,9 +38,11 @@ $_SESSION[ "idAdmin" ]=0;
 							if ( $contra == $fila[ 'contraDocente' ] ) {
 								$_SESSION["idAdmin"] =$_POST[ 'usuario' ];
 								echo "ok2";
+								exit();
 							} else {
 
 								echo "Datos incorrecto";
+								exit();
 							}
 							
 
@@ -55,9 +59,11 @@ $_SESSION[ "idAdmin" ]=0;
 								$_SESSION["idAdmin"] =$_POST[ 'usuario' ];
 								$_SESSION["grado"]= $fila["grado"];
 								echo "ok3";
+								exit();
 							} else {
 
 								echo "Datos incorrecto";
+								exit();
 							}
 							
 
