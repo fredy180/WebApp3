@@ -17,10 +17,10 @@ $idAdmin = $_SESSION[ "idAdmin" ];
 $sql = "INSERT INTO `docente` (`iddocente`, `contraDocente`, `nombre`, `apellido`, `gradoEncargado`, `sexo`,`telefono` , `idAdministrador`) VALUES ('$identificacion', '$contrasena', '$nombre', '$apellido', '$grado', '$sexo', '$telefono','$idAdmin');";
 
 if ( $mysqli->query( $sql ) === TRUE ) {
-	echo( '-> Registro exitoso' );
+	echo( json_encode('-> Registro exitoso' ));
 
 } else {
-	echo "Error: -> " . $mysqli->error;
+	echo json_encode('Error: -> ' . $mysqli->error);
 }
 
 $mysqli->close();
