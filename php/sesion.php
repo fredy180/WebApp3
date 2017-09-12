@@ -17,7 +17,7 @@ if ( $_POST ) {
 			if ( $id == $fila[ 'idadministrador' ] ) {
 				if ( $contra == $fila[ 'nombreAdministrador' ] ) {
 					$_SESSION[ "idAdmin" ] = $_POST[ 'usuario' ];
-					echo "ok1";
+					echo json_encode(array("respuesta"=>"ok1"));
 					exit();
 				} else {
 
@@ -33,7 +33,7 @@ if ( $_POST ) {
 			if ( $id == $fila[ 'iddocente' ] ) {
 				if ( $contra == $fila[ 'contraDocente' ] ) {
 					$_SESSION[ "idAdmin" ] = $_POST[ 'usuario' ];
-					echo json_encode("ok1");
+					echo json_encode(array("respuesta"=>"ok1"));
 					exit();
 				} else {
 

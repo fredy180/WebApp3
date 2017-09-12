@@ -99,10 +99,12 @@
 					data: str,
 
 					success:function(resp){
-						if(JSON.parse(resp)=="ok1"){
+						var v = JSON.parse(resp);
+						
+						if(v["respuesta"]==="ok1"){
                                window.location = "php/admin/registroDocente.html";
 							
-						}else alert("Error en los datos ");
+						}else alert("Error en los datos.");
 					}
 
 				} );
