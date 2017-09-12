@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>ADMINISTRADOR</title>
-	<script src="../../JavaScript/jquery-1.11.2.min.js" type="text/javascript"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
 	<script src="../../JavaScript/materialize.min.js" type="text/javascript"></script>
 	<script src="../../JavaScript/materialize.js" type="text/javascript"></script>
 	<link href="../../CSS/materialize.min.css" rel="stylesheet">
@@ -143,19 +143,25 @@
         
         <script>
 		function Registro() {
-		
-				
-				var str = $( "#datos" ).serialize();
-					$.ajax( {
-					url: "insertarDocente.php",
-					method: "POST",
-					data: str,
-
-					success:function(resp){
-						alert(""+resp);
+			var str = $( "#datos" ).serialize();
+				$.ajax({
+					type       : "POST",
+					url        : "insertarDocente.php",
+					crossDomain: true,
+					beforeSend : function() {$.mobile.loading('show')},
+					complete   : function() {$.mobile.loading('hide')},
+					data       : {str},
+					dataType   : 'jsonp',
+					success    : function(response) {
+						//console.error(JSON.stringify(response));
+						alert('Works!');
+					},
+					error      : function() {
+						//console.error("error");
+						alert('Not working!');                  
 					}
-
-				} );
+    			});     
+		
 			
 
 			return false;
