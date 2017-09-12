@@ -6,10 +6,9 @@
 	<meta name="viewport" content="width=device-width user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>ADMINISTRADOR</title>
 	
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+	
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
 	<script src="../../JavaScript/materialize.min.js" type="text/javascript"></script>
 	<script src="../../JavaScript/materialize.js" type="text/javascript"></script>
 	<link href="../../CSS/materialize.min.css" rel="stylesheet">
@@ -147,23 +146,21 @@
         
         <script>
 		function Registro() {
-			alert("");
-			var str = $( "#datos" ).serialize();
+			
+			var str = $( "#datos" ).serializeArray();
 				$.ajax({
 					type       : "POST",
 					url        : "insertarDocente.php",
-					crossDomain: true,
-					beforeSend : function() {$.mobile.showPageLoadingMsg();},
-					complete   : function() {$.mobile.hidePageLoadingMsg();},
+					
 					data       : {str},
-					dataType   : 'jsonp',
+					dataType   : 'json',
 					success    : function(response) {
 						//console.error(JSON.stringify(response));
-						alert('Works!');
+						alert('Rergistro !');
 					},
 					error      : function() {
 						//console.error("error");
-						alert('Not working!');                  
+						alert('Not Registro!');                  
 					}
     			});     
 		
